@@ -10,8 +10,8 @@ The system focuses on **20 common plant diseases** (e.g., spot, blight, rot, rus
  
 - Semantic segmentation using **InternImage**
 - Built on **MMSegmentation**
-- FastAPI backend for mobile integration
-- GPU-accelerated inference
+- **FastAPI** backend for mobile integration
+- **GPU-accelerated** inference
  
 ---
  
