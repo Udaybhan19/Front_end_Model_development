@@ -89,7 +89,8 @@ python Plant_Disease_All_Creation.py
  
 ### Download Pretrained Weights
  
-Download the pretrained model weights from the provided **Google Drive** link.
+Download the pretrained model weights from the provided **[Google Drive](https://drive.google.com/drive/folders/1VEirU4DhkF_Lg1FqZw1E_KFbkevYOnDm?usp=sharing)** link.
+
  
 Create a directory to store the model weights:
  
