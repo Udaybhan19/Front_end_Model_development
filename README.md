@@ -28,6 +28,11 @@ conda create -n plantdisease python=3.9 -y
 conda activate plantdisease
  ```
 ### 3️⃣ Install CUDA & PyTorch
+- CUDA ≥ 10.2  
+- cuDNN ≥ 7  
+- GCC ≥ 9 and < 10  
+
+#### Example: Install PyTorch 1.11 with CUDA 11.3 and gcc 9.5.0
 ```bash
 conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch -y
 conda install -c conda-forge cudatoolkit-dev=11.3 -y # to install nvcc
@@ -54,6 +59,10 @@ cd ./ops_dcnv3
 sh ./make.sh
 # unit test (should see all checking is True)
 python test.py
+ ```
+### After successfully running the above command, change the directory to: 
+```bash
+cd segmentation
  ```
   ---
 ## 📁 Data Preparation
@@ -98,8 +107,6 @@ The API module consists of the following files:
 
 - **`API_Main.py`**  
   Implements the FastAPI application to handle image uploads, perform inference, return results for mobile app integration, and generate API keys.
-
----
 
 ### Generate API Key
 
