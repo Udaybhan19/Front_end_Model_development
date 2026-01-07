@@ -1,8 +1,8 @@
 # 🌱 Plant Disease Detection & Segmentation Mobile App
  
-This repository provides an **AI-powered plant disease detection and semantic segmentation system** designed for **mobile applications**. The segmentation pipeline is built on top of **MMSegmentation** using the **InternImage** backbone, with a **FastAPI-based backend** for real-time inference.
+This repository provides an **AI-powered plant disease detection and semantic segmentation system** designed for **mobile applications**. The segmentation pipeline is built on top of MSegmentation using the SOTA Segmentation model as backbone, with a **FastAPI-based backend** for real-time inference.
  
-The system focuses on **20 common plant diseases** (e.g., spot, blight, rot, rust) and is optimized for accuracy, scalability, and deployment readiness.
+The system focuses on **20 common plant diseases** (e.g., spot, blight, rot, rust) for unknown plant species. In addition, it targets 12 major crops, each containing crop-specific diseases, including apple, grape, banana, rice, wheat, soybean, tomato, potato, bean, cucumber, cabbage, and corn, to ensure scalability and deployment readiness for real-world applications.
  
 ---
  
@@ -58,15 +58,11 @@ python test.py
   ---
 ## 📁 Data Preparation
  
-Two Python scripts are provided for dataset preparation.
- 
-### `prepare_dataset.py`
- 
-**Description**  
-Converts raw plant disease datasets into an MMSegmentation-compatible format and creates train/test splits.
+Two Python scripts are provided for dataset preparation used to updates the MMSegmentation dataset directory created during installation in the plantdisease conda environment and generates crop-specific, MMSegmentation-compatible dataset files. 
  
 ```bash
-python prepare_dataset.py --data_root /path/to/raw_dataset
+python Init_All_Creation.py
+python Plant_Disease_All_Creation.py 
  ```
 ## 🧠 Models & Weights
  
@@ -87,25 +83,27 @@ model_weights/
 └── Banana_Disease.pth
 ...
   ```
-# 🚀 API Setup (FastAPI Backend)
-## API Files Overview
-### The API module consists of the following files:
- 
-### disease_config.py
-### Contains plant disease metadata such as disease names, categories, and descriptions.
-### model_config.py
-### Defines model weight paths and MMSegmentation configuration file locations.
-### api_server.py
-### Implements the FastAPI server for inference and mobile application integration.
- 
-## Generate API Key
-###Generate an API key using the following command:
+## 🚀 API Setup (FastAPI Backend)
+
+### API Files Overview
+
+The API module consists of the following files:
+
+- **`disease_config.py`**  
+  Stores plant disease metadata, including disease names, categories, and descriptions.
+
+- **`API_Model_Config.py`**  
+  Defines model weight paths and MMSegmentation configuration file locations used during inference.
+
+- **`API_Main.py`**  
+  Implements the FastAPI application, handles image uploads, and manages inference for mobile app integration.
+
+---
+
+### Generate API Key
+
+Generate an API key by running the following command:
+
 ```bash
-python generate_api_key.py
- ```
- 
-## Start API Server
-### Launch the FastAPI server:
-```bash
-uvicorn api_server:app --host 0.0.0.0 --port 8000
+python API_Main.py
 ```
