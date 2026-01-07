@@ -83,20 +83,21 @@ model_weights/
 └── Banana_Disease.pth
 ...
   ```
+---
 ## 🚀 API Setup (FastAPI Backend)
 
 ### API Files Overview
 
 The API module consists of the following files:
 
-- **`disease_config.py`**  
-  Stores plant disease metadata, including disease names, categories, and descriptions.
+- **`API_Disease_Config.py`**  
+  Stores plant disease metadata, including disease names, crop_overview, and prevention.
 
 - **`API_Model_Config.py`**  
-  Defines model weight paths and MMSegmentation configuration file locations used during inference.
+  Defines the model weight and configuration (config.) file paths for each crop type used during model loading, and specifies the disease class names associated with each crop.
 
 - **`API_Main.py`**  
-  Implements the FastAPI application, handles image uploads, and manages inference for mobile app integration.
+  Implements the FastAPI application to handle image uploads, perform inference, return results for mobile app integration, and generate API keys.
 
 ---
 
