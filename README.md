@@ -22,18 +22,18 @@ The system focuses on **20 common plant diseases** (e.g., spot, blight, rot, rus
 ```bash
 git clone https://github.com/Rashmi/Plant_Disease.git
 
-## 2️⃣ Create and Activate Conda Environment
+### 2️⃣ Create and Activate Conda Environment
 ```bash
 conda create -n plantdisease python=3.9 -y
 conda activate plantdisease
 
-## 3️⃣ Install CUDA & PyTorch
+### 3️⃣ Install CUDA & PyTorch
 ```bash
 conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch -y
 conda install -c conda-forge cudatoolkit-dev=11.3 -y # to install nvcc
 conda install -c conda-forge termcolor yacs pyyaml scipy pip -y
 
-## 4️⃣ Install Core Dependencies
+### 4️⃣ Install Core Dependencies
 ```bash
 pip install opencv-python
 pip install -U openmim
