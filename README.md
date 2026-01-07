@@ -21,18 +21,18 @@ The system focuses on **20 common plant diseases** (e.g., spot, blight, rot, rus
  
 ```bash
 git clone https://github.com/Rashmi/Plant_Disease.git
- 
+ ```
 ### 2️⃣ Create and Activate Conda Environment
 ```bash
 conda create -n plantdisease python=3.9 -y
 conda activate plantdisease
- 
+ ```
 ### 3️⃣ Install CUDA & PyTorch
 ```bash
 conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch -y
 conda install -c conda-forge cudatoolkit-dev=11.3 -y # to install nvcc
 conda install -c conda-forge termcolor yacs pyyaml scipy pip -y
- 
+ ```
 ### 4️⃣ Install Core Dependencies
 ```bash
 pip install opencv-python
@@ -44,7 +44,8 @@ pip install yapf==0.40.1
 pip install termcolor yacs pyyaml scipy
 pip install numpy==1.26.4   # numpy < 2.0 required
 pip install pydantic==1.10.13
- 
+```
+ ---
 ## Compile CUDA Operators (DCNv3)
  
 ### Before compiling, please use the nvcc -V command to check whether your nvcc version matches the CUDA version of PyTorch.
@@ -53,8 +54,8 @@ cd ./ops_dcnv3
 sh ./make.sh
 # unit test (should see all checking is True)
 python test.py
- 
- 
+ ```
+  ---
 ## 📁 Data Preparation
  
 Two Python scripts are provided for dataset preparation.
@@ -66,7 +67,7 @@ Converts raw plant disease datasets into an MMSegmentation-compatible format and
  
 ```bash
 python prepare_dataset.py --data_root /path/to/raw_dataset
- 
+ ```
 ## 🧠 Models & Weights
  
 ### Download Pretrained Weights
@@ -77,12 +78,15 @@ Create a directory to store the model weights:
  
 ```bash
 mkdir model_weights
- 
-lace the downloaded file inside the directory:
- 
+ ```
+Place the downloaded file inside the directory:
+```bash 
 model_weights/
-└── internimage_segmentation.pth
- 
+└── Unknown_Disease.pth
+└── Apple_Disease.pth
+└── Banana_Disease.pth
+...
+  ```
 # 🚀 API Setup (FastAPI Backend)
 ## API Files Overview
 ### The API module consists of the following files:
@@ -98,9 +102,10 @@ model_weights/
 ###Generate an API key using the following command:
 ```bash
 python generate_api_key.py
- 
+ ```
  
 ## Start API Server
 ### Launch the FastAPI server:
 ```bash
 uvicorn api_server:app --host 0.0.0.0 --port 8000
+```
