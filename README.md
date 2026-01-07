@@ -126,5 +126,5 @@ The API module consists of the following files:
 Generate an API key by running the following command:
 
 ```bash
-python API_Main.py
+uvicorn API_Main:app --host 0.0.0.0 --port 8000
 ```
