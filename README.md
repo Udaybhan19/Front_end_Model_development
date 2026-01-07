@@ -38,6 +38,18 @@ conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit
 conda install -c conda-forge cudatoolkit-dev=11.3 -y # to install nvcc
 conda install -c conda-forge termcolor yacs pyyaml scipy pip -y
  ```
+```bash
+sudo apt-get install gcc-9 g++-9 g++-9-multilib gfortran-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+sudo update-alternatives --config gcc
+ ```
+### Check the current versions in your CUDA environment
+```bash
+%%shell
+python --version # 3.9
+nvcc --version # cuda_11.3
+gcc --version # 9.5.0
+ ```
 ### 4️⃣ Install Core Dependencies
 ```bash
 pip install opencv-python
